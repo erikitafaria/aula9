@@ -14,6 +14,6 @@ st.selectbox('Qual estado selecionar?', estados)
 dadosfiltrados = df[df['NM_UF'] == estadoselecionado]
 st.write(dadosfiltrados)
 
-if st.checkbox('Mostrar tabela'):
+if st.checkbox('Mostrar tabela')==True:
   st.write(dadosfiltrados)
 st.map(dadosfiltrados, latitude="Lat_d", longitude="Long_d")
