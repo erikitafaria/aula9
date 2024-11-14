@@ -9,6 +9,8 @@ df = pd.DataFrame({
 st.write("Criando uma tabela!")
 st.write(df)
 
-st.selectbox(
+opcao = st.selectbox(
     'Qual servidor você gostaria de selecionar?',
      df['nomeServidor'])
+dadosfiltrados = df[df['nomeServidor'] == opcao]
+st.write(dadosfiltrados)
