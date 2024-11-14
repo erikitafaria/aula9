@@ -7,11 +7,13 @@ df.drop(columns=['Unnamed: 0'], inplace=True)
 list = ['Lat_d', 'Long_d']
 df[list] = df[list].apply(pd.to_numeric, errors='coerce')
 estados = df['NM_UF'].unique()
-st.selectbox('Qual estado selecionar?', estados)
-estados = df['NM_UF'].unique()
 estadoselecionado = st.selectbox(
     'Qual estado selecionar?',
      estados)
 st.selectbox('Qual estado selecionar?', estados)
 dadosfiltrados = df[df['NM_UF'] == estadoselecionado]
 st.write(dadosfiltrados)
+
+if st.checkbox('Mostrar tabela'):
+  st.write(dadosfiltrados)
+st.map(dadosfiltrados, latitude="Lat_d", longitude="Long_d")
