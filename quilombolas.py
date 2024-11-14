@@ -20,3 +20,9 @@ if st.checkbox('Mostrar tabela') == True:
 st.map(dadosfiltrados, latitude="Lat_d", longitude="Long_d")
 st.bar_chart(df['NM_UF'].value_counts()) #gráfico de barras por estado
 st.bar_chart(df['NM_MUNIC'].value_counts()[:10]) 
+
+qtdeMunicipios = len(df['NM_MUNIC'].unique())
+st.write("A quantidade de municípios com localização quilombola é " + str(qtdeMunicipios))
+
+qtdeComunidades = len(df['NM_AGLOM'].unique())
+st.write("A quantidade de comunidades quilombolas é " + str(qtdeComunidades))
