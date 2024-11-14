@@ -14,9 +14,7 @@ estadoselecionado = st.selectbox('Qual estado selecionar?',estados)
 
 dadosfiltrados = df[df['NM_UF'] == estadoselecionado]
 
-if st.checkbox('Mostrar tabela')==True:
+if st.checkbox('Mostrar tabela'):
   st.write(dadosfiltrados)
 
 st.map(dadosfiltrados, latitude="Lat_d", longitude="Long_d")
-st.bar_chart(df['NM_UF'].value_counts()) 
-st.bar_chart(df['NM_MUNIC'].value_counts()[:10])
