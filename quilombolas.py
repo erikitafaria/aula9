@@ -22,10 +22,10 @@ st.bar_chart(df['NM_UF'].value_counts()) #gráfico de barras por estado
 st.bar_chart(df['NM_MUNIC'].value_counts()[:10]) 
 
 st.metric('# Municípios', len(df['NM_MUNIC'].unique()))
-st.write("A quantidade de municípios com localização quilombola é " + str(qtdeMunicipios))
+#st.write("A quantidade de municípios com localização quilombola é " + str(qtdeMunicipios))
 
 st.metric('# Comunidades', len(df['NM_AGLOM'].unique()))
-st.write("A quantidade de comunidades quilombolas é " + str(qtdeComunidades))
+#st.write("A quantidade de comunidades quilombolas é " + str(qtdeComunidades))
 
 st.header('Número de comunidades por UF')
 st.bar_chart(df['NM_UF'].value_counts())
